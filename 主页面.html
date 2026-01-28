@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实习精彩瞬间</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        /* 背景轮播容器 */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .bg-image.active {
+            opacity: 1;
+        }
+
+        /* 导航栏样式 */
+        nav {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #f0f0f0;
+            color: #007bff;
+        }
+
+        /* 内容容器 */
+        .content {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* 板块通用样式 */
+        .section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        .section p {
+            line-height: 1.8;
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* 精彩瞬间卡片样式 */
+        .moments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .moment-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .moment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            background-color: #f5f5f5;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .card-content a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .card-content a:hover {
+            background-color: #0056b3;
+        }
+
+        /* 联系方式样式 */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .contact-item i {
+            color: #007bff;
+            font-size: 20px;
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-top: 50px;
+            color: #666;
+        }
+    </style>
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 背景轮播容器 -->
+    <div class="background-container">
+        <div class="bg-image active" style="background-image: url(%E5%9B%BE%E7%89%873.png);"></div>
+        <div class="bg-image" style="background-image: url(%E5%9B%BE%E7%89%874.png);"></div>
+     
+        
+    </div>
+
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+			<span style="text-align: left"></span><a href="https://www.chhospital.com.cn/"><img src="图片1.png" width="50" height="50" alt=""/></a> 
+			<a href="#intro">网站介绍</a>
+            <a href="#contact">联系方式</a>
+            <a href="#moments">回忆瞬间</a>
+	    <img src="图片7.png" width="150" height="50" alt=""/> </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="content">
+        <!-- 网站介绍板块 -->
+        <section id="intro" class="section">
+            <h2>网站介绍</h2>
+            <p>欢迎来到「宋烨的长海实习回忆录」网站！这里记录了我在实习期间的点点滴滴，从初入科室的懵懂，到独立完成任务的成长，每一个瞬间都值得被珍藏。</p>
+            <p>本网站旨在分享实习过程中的收获与感悟，展示实习期间参与的项目、学到的技能以及遇到的有趣故事。</p>
+        </section>
+
+        <!-- 站长联系方式 -->
+        <section id="contact" class="section">
+            <h2>我的联系方式</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>邮箱：Songye9451@163.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>电话：18217314148</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-weixin"></i>
+                    <span>QQ：3346473686</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 精彩瞬间板块 -->
+        <section id="moments" class="section">
+            <h2>实习难忘回忆瞬间</h2>
+            <div class="moments-grid">
+                <!-- 精彩瞬间一 -->
+                <div class="moment-card">
+                    <div class="card-img" style=""><img src="28a36d2214e77cae6882d004a727755d.jpg" width="350" height="200" alt=""/></div>
+                    <div class="card-content">
+                        <h3>瞬间一：第一个科室，第一次抽血</h3>
+                        <p>泌尿外科，这是我梦开始的地方，在教员指导下完成了第一次抽血，虽然过程坎坷，但收获满满...</p>
+                        <a href="瞬间一.html">查看详情</a>
+                    </div>
+                </div>
+
+                <!-- 精彩瞬间二 -->
+                <div class="moment-card">
+                    <div class="card-img" style=""><img src="13b79855fada1af8ef0e2d24f7d3918b.jpg" width="350" height="200" alt=""/></div>
+                    <div class="card-content">
+                        <h3>瞬间二：无形的生命线</h3>
+                        <p>手术室，一个特殊、严谨的科室，见证了笨拙的我成长的地方...</p>
+                        <a href="瞬间二.html">查看详情</a>
+                    </div>
+                </div>
+
+                <!-- 精彩瞬间三 -->
+                <div class="moment-card">
+                  <div class="card-img" style=""><img src="da4550a77e2ff3ba8b193200e880dd55.jpg" width="350" height="200" alt=""/></div>
+             
+                    <div class="card-content">
+                      <h3>瞬间三：第一次收到表扬信</h3>
+                        <p>神经内科，凭借努力和表现，第一次收获患者的表扬信，来自患者的认可...</p>
+                        <a href="瞬间三.html">查看详情</a>
+                  </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>  实习难忘回忆 | 所有内容均为原创</p>
+    </footer>
+
+    <script>
+        // 背景轮播逻辑
+        const bgImages = document.querySelectorAll('.bg-image');
+        let currentIndex = 0;
+        const intervalTime = 5000; // 切换间隔，5秒
+
+        // 切换背景函数
+        function changeBackground() {
+            // 移除当前激活的背景
+            bgImages[currentIndex].classList.remove('active');
+            // 更新索引
+            currentIndex = (currentIndex + 1) % bgImages.length;
+            // 激活新的背景
+            bgImages[currentIndex].classList.add('active');
+        }
+
+        // 启动自动轮播
+        setInterval(changeBackground, intervalTime);
+    </script>
+</body>
+</html>
